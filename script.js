@@ -19,13 +19,12 @@ var numSpec = "1234567890!@#$%^&*?~";
 var password = "";
 //----------------------------------------------------------------------------
 var generateBtn = document.querySelector("#generate");
-// Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
 function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
   return password;
-  //The value property returns the value of the value attribute of a text field
 }
 //------------------------------------------------------------------------
 // function generate(click, )
@@ -196,6 +195,13 @@ function generatedPassword() {
   ) {
     generatedLowerUpper();
   } else if (
+    lowercasePrompt === true &&
+    uppercasePrompt !== true &&
+    numberPrompt === true &&
+    specCharPrompt !== true
+  ) {
+    generatedLowerNum();
+  } else if (
     lowercasePrompt !== true &&
     uppercasePrompt !== true &&
     numberPrompt !== true &&
@@ -209,6 +215,13 @@ function generatedLow() {
   for (var i = 0; i <= lengthPrompt; i++) {
     var randomLow = Math.floor(Math.random() * lowercase.length);
     password += lowercase.substring(randomLow, randomLow + 1);
+    console.log(password);
+  }
+}
+function generatedLowerNum() {
+  for (var i = 0; i <= lengthPrompt; i++) {
+    var randomLowNum = Math.floor(Math.random() * lowerNum.length);
+    password += lowerNum.substring(randomLowNum, randomLowNum + 1);
     console.log(password);
   }
 }
