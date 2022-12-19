@@ -42,6 +42,7 @@ var numberPrompt = confirm("Do you want numbers in your password?");
 selectNumbers();
 // generatedNum();
 var specCharPrompt = confirm(
+
   "Do you want special characters in your password?"
 );
 selectSpecials();
@@ -50,7 +51,7 @@ selectSpecials();
 generatedPassword();
 //-----------------------------------------------------------------------
 function checkLength() {
-  if (lengthPrompt >= 8 && lengthPrompt <= 128) {
+  if (lengthPrompt >=  8 && lengthPrompt <= 128) {
     console.log(lengthPrompt);
     // } else if (lengthPrompt === null || lengthPrompt === NaN) {
     //   console.log("You must enter a number.");
